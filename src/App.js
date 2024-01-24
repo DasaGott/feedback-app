@@ -1,5 +1,14 @@
+import Header from "./components/Header";
+
 function App() {
-  return <h1>Toto je novy nadpis cez App.js</h1>;
+  return (
+    <>
+      <Header />
+      <div className="container">
+        <h1>My App</h1>
+      </div>
+    </>
+  );
 }
 
 export default App;
