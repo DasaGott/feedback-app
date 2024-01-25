@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function FeedbackStats({ feedback }) {
   let average =
     feedback.reduce(
@@ -21,4 +23,7 @@ function FeedbackStats({ feedback }) {
   );
 }
 
+FeedbackStats.propTypes = {
+  feedback: PropTypes.array.isRequired,
+};
 export default FeedbackStats;
