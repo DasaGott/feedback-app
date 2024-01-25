@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackData from "./data/FeedbackData";
+import FeedbackStats from "./components/FeedbackStats";
 
 function App() {
   const [feedback, setFeedback] =
@@ -14,6 +15,8 @@ function App() {
       )
     ) {
       setFeedback(
+        //filter through array of feedbacks and bring back the ones, which ids are not
+        //same as the id passed to the function (the one where onClick event was fired)
         feedback.filter((item) => item.id !== id)
       );
     }
@@ -23,6 +26,7 @@ function App() {
     <>
       <Header />
       <div className="container">
+        <FeedbackStats feedback={feedback} />
         <FeedbackList
           feedback={feedback}
           handleDelete={deleteFeedback}
